@@ -41,6 +41,7 @@ void draw() {
     if (serialData != null) {
       try {
         int newCircleDiameter = Integer.parseInt(serialData);
+        println("Diameter: " + newCircleDiameter + " pixels");
         circleDiameter = newCircleDiameter;
       } catch (Exception e) {}
     }
