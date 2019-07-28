@@ -25,10 +25,11 @@ void loop() {
   int pot1Value = map(analogRead(pot1Pin), 0, 1023, 0, 255); // read mapped value from potentiometer 1
   int pot2Value = map(analogRead(pot2Pin), 0, 1023, 0, 255); // read mapped value from potentiometer 2
   int pot3Value = map(analogRead(pot3Pin), 0, 1023, 0, 255); // read mapped value from potentiometer 3
+  // combine values and send to serial port
   Serial.print(pot1Value);
   Serial.print(",");
   Serial.print(pot2Value);
   Serial.print(",");
-  Serial.println(pot3Value); // writes value to serial port
+  Serial.println(pot3Value);
   delay(50); // 50ms delay to reduce serial traffic
 }
