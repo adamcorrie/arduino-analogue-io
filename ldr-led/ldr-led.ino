@@ -15,7 +15,7 @@
  * 
  */
 
-#define potPin A0 // define potPin as Pin A0
+#define ldrPin A0 // define ldrPin as Pin A0
 #define ledPin 3 // define ledPin as Pin 3
 
 void setup() {
@@ -23,9 +23,9 @@ void setup() {
 }
 
 void loop() {
-  int potValue = analogRead(potPin); // read value from potentiometer
-  Serial.println(potValue); // write value to serial port
-  int mappedPotValue = map(potValue, 1023, 0, 0, 255); // map the value
-  analogWrite(ledPin, mappedPotValue); // write the mapped value to the PWM pin
+  int ldrValue = analogRead(ldrPin); // read value from potentiometer
+  Serial.println(ldrValue); // write value to serial port
+  int mappedLDRValue = map(ldrValue, 1023, 0, 0, 255); // map the value
+  analogWrite(ledPin, mappedLDRValue); // write the mapped value to the PWM pin
   delay(50); // 50ms delay to reduce serial traffic
 }
