@@ -35,9 +35,9 @@ void setup() {
 void draw() {
   background(backgroundColour);
   while (serialPort.available() > 0) {
-    String serialData = trim(serialPort.readStringUntil(10));
-    if (serialData != null) {
-      try {
+    try {
+      String serialData = trim(serialPort.readStringUntil(10));
+      if (serialData != null) {
         String[] rgbValues = split(serialData, ',');
         if (rgbValues.length == 3) {
           int rValue = Integer.parseInt(rgbValues[0]);
@@ -47,7 +47,7 @@ void draw() {
           println("R: " + rValue + " G: " + gValue + " B: " + bValue);
           backgroundColour = newBackgroundColour;
         }
-      } catch (Exception e) {}
-    }
+      } 
+    }catch (Exception e) {}
   }
 }
